@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Marcaktiva | Digital Ads Specialist</title>
+  <meta name="description" content="Especialista en campañas digitales. Google Ads, Meta Ads, TikTok y LinkedIn Ads para empresas en LATAM y USA.">
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+  <style>
+    :root{--rojo:#E8192C;--negro:#0A0A0A;--blanco:#FFFFFF;--gris:#F5F5F5;}
+    *{margin:0;padding:0;box-sizing:border-box;}
+    html{scroll-behavior:smooth;}
+    body{font-family:'DM Sans',sans-serif;background:var(--blanco);color:var(--negro);overflow-x:hidden;}
+    h1,h2,h3{font-family:'Syne',sans-serif;}
+    nav{position:fixed;top:0;left:0;right:0;z-index:100;background:var(--negro);padding:0 5%;display:flex;align-items:center;justify-content:space-between;height:70px;}
+    .nav-logo img{height:38px;}
+    .nav-links{display:flex;gap:2rem;list-style:none;}
+    .nav-links a{color:rgba(255,255,255,0.75);text-decoration:none;font-size:0.9rem;transition:color 0.2s;}
+    .nav-links a:hover{color:#fff;}
+    .nav-cta{background:var(--rojo);color:#fff;padding:0.55rem 1.4rem;border-radius:4px;text-decoration:none;font-size:0.9rem;font-weight:500;}
+    .hero{min-height:100vh;background:var(--negro);display:flex;align-items:center;padding:120px 5% 80px;position:relative;overflow:hidden;}
+    .hero::before{content:'';position:absolute;top:-200px;right:-200px;width:600px;height:600px;background:radial-gradient(circle,rgba(232,25,44,0.15) 0%,transparent 70%);border-radius:50%;}
+    .hero-content{max-width:700px;position:relative;z-index:1;}
+    .badge{display:inline-flex;align-items:center;background:rgba(232,25,44,0.15);border:1px solid rgba(232,25,44,0.3);color:var(--rojo);padding:0.4rem 1rem;border-radius:50px;font-size:0.8rem;font-weight:500;text-transform:uppercase;margin-bottom:1.5rem;}
+    .hero h1{font-size:clamp(2.5rem,5vw,4rem);font-weight:800;color:#fff;line-height:1.1;margin-bottom:1.5rem;}
+    .hero h1 span{color:var(--rojo);}
+    .hero p{color:rgba(255,255,255,0.65);font-size:1.1rem;line-height:1.7;margin-bottom:2.5rem;}
+    .btns{display:flex;gap:1rem;flex-wrap:wrap;}
+    .btn-r{background:var(--rojo);color:#fff;padding:0.9rem 2rem;border-radius:6px;text-decoration:none;font-weight:600;font-size:1rem;transition:all 0.2s;}
+    .btn-r:hover{background:#B5121F;transform:translateY(-2px);}
+    .btn-b{background:transparent;color:#fff;padding:0.9rem 2rem;border-radius:6px;text-decoration:none;font-weight:500;border:1px solid rgba(255,255,255,0.2);}
+    .stats{display:flex;gap:3rem;margin-top:4rem;padding-top:3rem;border-top:1px solid rgba(255,255,255,0.1);flex-wrap:wrap;}
+    .stat-n{font-family:'Syne',sans-serif;font-size:2rem;font-weight:800;color:#fff;}
+    .stat-n span{color:var(--rojo);}
+    .stat-l{font-size:0.85rem;color:rgba(255,255,255,0.5);}
+    #nosotros{padding:100px 5%;background:#fff;}
+    .grid2{display:grid;grid-template-columns:1fr 1fr;gap:5rem;align-items:center;max-width:1100px;margin:0 auto;}
+    .tag{color:var(--rojo);font-size:0.8rem;font-weight:600;letter-spacing:0.1em;text-transform:uppercase;display:block;margin-bottom:1rem;}
+    .tit{font-size:clamp(1.8rem,3vw,2.5rem);font-weight:800;line-height:1.2;margin-bottom:1.5rem;}
+    .txt{color:#444;line-height:1.8;margin-bottom:1.5rem;}
+    .skills{display:flex;flex-wrap:wrap;gap:0.6rem;margin-top:1.5rem;}
+    .sk{background:var(--gris);padding:0.4rem 1rem;border-radius:50px;font-size:0.85rem;font-weight:500;}
+    .card-n{background:var(--negro);border-radius:16px;padding:2.5rem;color:#fff;}
+    .card-n h3{font-family:'Syne',sans-serif;font-size:1.4rem;font-weight:700;margin-bottom:1.5rem;}
+    .card-n h3 span{color:var(--rojo);}
+    .ei{display:flex;gap:1rem;margin-bottom:1.2rem;}
+    .eic{width:36px;height:36px;background:rgba(232,25,44,0.15);border-radius:8px;display:flex;align-items:center;justify-content:center;flex-shrink:0;}
+    .eit{font-size:0.9rem;color:rgba(255,255,255,0.75);line-height:1.5;}
+    #servicios{padding:100px 5%;background:var(--gris);}
+    .ch{text-align:center;max-width:600px;margin:0 auto 4rem;}
+    .sub{color:#888;font-size:1rem;line-height:1.6;margin-top:1rem;}
+    .grid4{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:1.5rem;max-width:1100px;margin:0 auto;}
+    .card{background:#fff;border-radius:12px;padding:2rem;border:1px solid #E0E0E0;transition:all 0.3s;position:relative;overflow:hidden;}
+    .card::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:var(--rojo);transform:scaleX(0);transition:transform 0.3s;}
+    .card:hover{box-shadow:0 20px 40px rgba(0,0,0,0.1);transform:translateY(-4px);}
+    .card:hover::before{transform:scaleX(1);}
+    .ci{width:52px;height:52px;background:rgba(232,25,44,0.08);border-radius:12px;display:flex;align-items:center;justify-content:center;font-size:1.5rem;margin-bottom:1.2rem;}
+    .card h3{font-size:1.15rem;font-weight:700;margin-bottom:0.7rem;}
+    .card p{color:#888;font-size:0.9rem;line-height:1.6;}
+    .tgs{display:flex;flex-wrap:wrap;gap:0.4rem;margin-top:1rem;}
+    .tg{background:var(--gris);color:#555;padding:0.25rem 0.7rem;border-radius:50px;font-size:0.75rem;}
+    #proceso{padding:100px 5%;background:#fff;}
+    .pasos{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:2rem;max-width:1000px;margin:4rem auto 0;}
+    .paso{text-align:center;padding:2rem 1.5rem;}
+    .pn{width:56px;height:56px;background:var(--rojo);color:#fff;border-radius:50%;display:flex;align-items:center;justify-content:center;font-family:'Syne',sans-serif;font-size:1.3rem;font-weight:800;margin:0 auto 1.2rem;}
+    .paso h3{font-size:1.1rem;font-weight:700;margin-bottom:0.7rem;}
+    .paso p{color:#888;font-size:0.9rem;line-height:1.6;}
+    #clientes{padding:80px 5%;background:var(--negro);}
+    .cl{text-align:center;color:rgba(255,255,255,0.5);font-size:0.85rem;letter-spacing:0.1em;text-transform:uppercase;margin-bottom:3rem;}
+    .logos{display:flex;flex-wrap:wrap;justify-content:center;align-items:center;gap:3rem;max-width:900px;margin:0 auto;}
+    .li{opacity:0.5;transition:opacity 0.2s;filter:brightness(0) invert(1);text-decoration:none;}
+    .li:hover{opacity:1;}
+    .li img{height:35px;width:auto;max-width:120px;object-fit:contain;}
+    .ln{color:rgba(255,255,255,0.5);font-family:'Syne',sans-serif;font-weight:700;}
+    #faqs{padding:100px 5%;background:var(--gris);}
+    .fw{max-width:700px;margin:4rem auto 0;}
+    .faq{background:#fff;border-radius:10px;margin-bottom:1rem;overflow:hidden;border:1px solid #E0E0E0;}
+    .fq{padding:1.3rem 1.5rem;font-weight:600;cursor:pointer;display:flex;justify-content:space-between;align-items:center;font-size:0.95rem;}
+    .fq::after{content:'+';font-size:1.3rem;color:var(--rojo);transition:transform 0.3s;}
+    .faq.open .fq::after{transform:rotate(45deg);}
+    .fa{max-height:0;overflow:hidden;transition:max-height 0.3s ease;}
+    .faq.open .fa{max-height:300px;}
+    .fa p{padding:0 1.5rem 1.3rem;color:#555;font-size:0.9rem;line-height:1.7;}
+    #contacto{padding:100px 5%;background:var(--negro);text-align:center;}
+    #contacto .tit{color:#fff;}
+    #contacto .sub{color:rgba(255,255,255,0.5);}
+    .cbtns{display:flex;justify-content:center;gap:1rem;margin-top:2.5rem;flex-wrap:wrap;}
+    .bwa{background:#25D366;color:#fff;padding:1rem 2.5rem;border-radius:6px;text-decoration:none;font-weight:600;}
+    .bem{color:rgba(255,255,255,0.7);border:1px solid rgba(255,255,255,0.2);padding:1rem 2.5rem;border-radius:6px;text-decoration:none;font-weight:600;}
+    footer{background:#050505;padding:2.5rem 5%;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:1rem;border-top:1px solid rgba(255,255,255,0.05);}
+    footer img{height:30px;}
+    footer p{color:rgba(255,255,255,0.3);font-size:0.85rem;}
+    @media(max-width:768px){.nav-links{display:none;}.grid2{grid-template-columns:1fr;gap:2.5rem;}footer{flex-direction:column;text-align:center;}}
+  </style>
+</head>
+<body>
+<nav>
+  <a href="#" class="nav-logo"><img src="https://marcaktiva.com/wp-content/uploads/2025/07/logo-marcaktiva-blanco-transparente-e1756359358687.png" alt="Marcaktiva"></a>
+  <ul class="nav-links">
+    <li><a href="#nosotros">Sobre mí</a></li><li><a href="#servicios">Servicios</a></li><li><a href="#proceso">Proceso</a></li><li><a href="#clientes">Clientes</a></li><li><a href="#faqs">FAQ</a></li>
+  </ul>
+  <a href="https://wa.me/51977890971" target="_blank" class="nav-cta">Conversemos →</a>
+</nav>
+<section class="hero">
+  <div class="hero-content">
+    <div class="badge">🎯 Ads Manager · LATAM & USA</div>
+    <h1>Campañas digitales que <span>generan resultados reales</span></h1>
+    <p>Hola, soy Manuel Gonzales. Especialista en Google Ads, Meta Ads, TikTok y LinkedIn Ads con casi 3 años de experiencia ayudando a empresas en LATAM y USA a crecer con campañas que convierten.</p>
+    <div class="btns">
+      <a href="https://wa.me/51977890971" target="_blank" class="btn-r">💬 Hablemos ahora</a>
+      <a href="#servicios" class="btn-b">Ver servicios</a>
+    </div>
+    <div class="stats">
+      <div><div class="stat-n">3<span>+</span></div><div class="stat-l">Años de experiencia</div></div>
+      <div><div class="stat-n">4</div><div class="stat-l">Plataformas publicitarias</div></div>
+      <div><div class="stat-n">2</div><div class="stat-l">Continentes</div></div>
+    </div>
+  </div>
+</section>
+<section id="nosotros">
+  <div class="grid2">
+    <div>
+      <span class="tag">Sobre mí</span>
+      <h2 class="tit">Somos Marcaktiva, tu aliado en marketing digital</h2>
+      <p class="txt">Soy Manuel César Gonzales, Ads Manager especializado en campañas de performance. Gestiono múltiples cuentas simultáneamente optimizando cada presupuesto para maximizar el retorno de inversión.</p>
+      <p class="txt">He desarrollado proyectos propios en el mundo digital, lo que me da una visión integral de todo el embudo comercial. Trabajo con empresas de diversos tamaños en LATAM y USA.</p>
+      <div class="skills"><span class="sk">Google Ads</span><span class="sk">Meta Ads</span><span class="sk">TikTok Ads</span><span class="sk">LinkedIn Ads</span><span class="sk">Gestión MCC</span><span class="sk">Análisis de datos</span><span class="sk">Reportes personalizados</span></div>
+    </div>
+    <div class="card-n">
+      <h3>Experiencia <span>destacada</span></h3>
+      <div class="ei"><div class="eic">🔍</div><div class="eit"><strong>Google Ads:</strong> Search, Display, Performance Max, YouTube</div></div>
+      <div class="ei"><div class="eic">📱</div><div class="eit"><strong>Meta Ads:</strong> Facebook, Instagram y WhatsApp</div></div>
+      <div class="ei"><div class="eic">🎵</div><div class="eit"><strong>TikTok Ads:</strong> Campañas de awareness y conversión</div></div>
+      <div class="ei"><div class="eic">💼</div><div class="eit"><strong>LinkedIn Ads:</strong> Campañas B2B y generación de leads</div></div>
+      <div class="ei"><div class="eic">🌎</div><div class="eit"><strong>Sectores:</strong> Tecnología, inmobiliaria, retail y servicios</div></div>
+    </div>
+  </div>
+</section>
+<section id="servicios">
+  <div class="ch"><span class="tag">Servicios</span><h2 class="tit">¿En qué te puedo ayudar?</h2><p class="sub">Campañas adaptadas a tu objetivo: leads, ventas, tráfico o reconocimiento de marca.</p></div>
+  <div class="grid4">
+    <div class="card"><div class="ci">🔍</div><h3>Google Ads</h3><p>Campañas en el buscador más grande del mundo para captar clientes en el momento exacto.</p><div class="tgs"><span class="tg">Search</span><span class="tg">Display</span><span class="tg">PMAX</span><span class="tg">YouTube</span></div></div>
+    <div class="card"><div class="ci">📱</div><h3>Meta Ads</h3><p>Llega a tu audiencia en Facebook, Instagram y WhatsApp con creatividades que convierten.</p><div class="tgs"><span class="tg">Facebook</span><span class="tg">Instagram</span><span class="tg">WhatsApp</span></div></div>
+    <div class="card"><div class="ci">🎵</div><h3>TikTok Ads</h3><p>Conecta con audiencias jóvenes a través de la plataforma de mayor crecimiento actual.</p><div class="tgs"><span class="tg">In-Feed</span><span class="tg">TopView</span><span class="tg">Spark Ads</span></div></div>
+    <div class="card"><div class="ci">💼</div><h3>LinkedIn Ads</h3><p>Campañas B2B para llegar a tomadores de decisión y generar leads calificados.</p><div class="tgs"><span class="tg">B2B</span><span class="tg">Lead Gen</span><span class="tg">Sponsored</span></div></div>
+  </div>
+</section>
+<section id="proceso">
+  <div class="ch"><span class="tag">Cómo trabajo</span><h2 class="tit">Un proceso claro y transparente</h2><p class="sub">Sin tecnicismos. Te explico todo en lenguaje simple y te mantengo informado en cada paso.</p></div>
+  <div class="pasos">
+    <div class="paso"><div class="pn">1</div><h3>Diagnóstico</h3><p>Analizamos tu negocio, competencia y objetivos para definir la estrategia correcta.</p></div>
+    <div class="paso"><div class="pn">2</div><h3>Estrategia y Setup</h3><p>Configuramos las campañas con la segmentación y presupuesto optimizado.</p></div>
+    <div class="paso"><div class="pn">3</div><h3>Optimización</h3><p>Monitoreamos diariamente y ajustamos para maximizar tu retorno de inversión.</p></div>
+    <div class="paso"><div class="pn">4</div><h3>Reportes</h3><p>Recibes reportes claros con métricas reales y recomendaciones accionables.</p></div>
+  </div>
+</section>
+<section id="clientes">
+  <p class="cl">Empresas con las que he trabajado</p>
+  <div class="logos">
+    <a href="https://gamapublicitariaperu.com/" target="_blank" class="li"><img src="https://gamapublicitariaperu.com/wp-content/uploads/Gama_publicitaria.png" alt="Gama Publicitaria" onerror="this.outerHTML='<span class=ln>Gama Publicitaria</span>'"></a>
+    <a href="https://publilima.com/" target="_blank" class="li"><img src="https://publilima.com/wp-content/uploads/2021/08/logo-publilima.png" alt="Publilima" onerror="this.outerHTML='<span class=ln>Publilima</span>'"></a>
+    <a href="https://gamapetperu.com/" target="_blank" class="li"><img src="https://gamapetperu.com/wp-content/uploads/2023/01/logo-gamapet.png" alt="Gama Pet" onerror="this.outerHTML='<span class=ln>Gama Pet</span>'"></a>
+    <a href="https://atlasimportperu.com/" target="_blank" class="li"><img src="https://atlasimportperu.com/wp-content/uploads/2023/01/logo-atlas.png" alt="Atlas Import" onerror="this.outerHTML='<span class=ln>Atlas Import</span>'"></a>
+  </div>
+</section>
+<section id="faqs">
+  <div class="ch"><span class="tag">Preguntas frecuentes</span><h2 class="tit">Resolvemos tus dudas</h2></div>
+  <div class="fw">
+    <div class="faq"><div class="fq">¿Cuánto presupuesto necesito para empezar?</div><div class="fa"><p>Depende de la plataforma y el objetivo. Recomiendo mínimos de $300-500 USD/mes. Hablemos de tu caso específico.</p></div></div>
+    <div class="faq"><div class="fq">¿En cuánto tiempo veo resultados?</div><div class="fa"><p>En 30-60 días ya tienes datos claros y campañas optimizadas. La velocidad depende del presupuesto y sector.</p></div></div>
+    <div class="faq"><div class="fq">¿Trabajas con empresas fuera de Perú?</div><div class="fa"><p>Sí, gestiono campañas en toda Sudamérica y Norteamérica. Trabajo 100% remoto.</p></div></div>
+    <div class="faq"><div class="fq">¿Qué incluye tu servicio?</div><div class="fa"><p>Setup completo, configuración de píxeles, optimización continua y reportes periódicos con métricas claras.</p></div></div>
+    <div class="faq"><div class="fq">¿Cómo es la comunicación?</div><div class="fa"><p>Por WhatsApp y videollamadas. Te mantengo informado proactivamente. La transparencia es fundamental.</p></div></div>
+  </div>
+</section>
+<section id="contacto">
+  <span class="tag">Contacto</span>
+  <h2 class="tit">¿Listo para hacer crecer tu negocio?</h2>
+  <p class="sub">Conversemos sin compromiso. Cuéntame tus objetivos y te digo cómo puedo ayudarte.</p>
+  <div class="cbtns">
+    <a href="https://wa.me/51977890971" target="_blank" class="bwa">💬 Escribir por WhatsApp</a>
+    <a href="mailto:manuel@marcaktiva.com" class="bem">✉️ Enviar email</a>
+  </div>
+</section>
+<footer>
+  <img src="https://marcaktiva.com/wp-content/uploads/2025/07/logo-marcaktiva-blanco-transparente-e1756359358687.png" alt="Marcaktiva">
+  <p>© 2026 Marcaktiva · Manuel César Gonzales · Lima, Perú</p>
+  <p style="color:rgba(255,255,255,0.2);">Digital Ads Specialist</p>
+</footer>
+<script>
+  document.querySelectorAll('.fq').forEach(q=>{q.addEventListener('click',()=>{const f=q.parentElement;const o=f.classList.contains('open');document.querySelectorAll('.faq').forEach(i=>i.classList.remove('open'));if(!o)f.classList.add('open');});});
+  document.querySelectorAll('a[href^="#"]').forEach(a=>{a.addEventListener('click',e=>{e.preventDefault();const t=document.querySelector(a.getAttribute('href'));if(t)t.scrollIntoView({behavior:'smooth',block:'start'});});});
+</script>
+</body>
+</html>
